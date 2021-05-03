@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>E-Invitation Card</title>
+	<style type="text/css">
+		body{
+			width: 100%;
+			height:100%;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font:16px;
+		}
+/*----------top----------*/
+		header{display:block;border:1px solid;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active,#Howitworks:active{transform: translateY(2px);}
+
+/*--------slogan--------*/
+		.slogan{padding:150px;background-image: url("bgimg1.jpg");background-size: 100% 100%;}
+		.slogan h1{font: 4em Garamond;color:#997a32;text-align:center;margin:0;}
+		.slogan p{font: 1.5em Garamond;color:#634e1e;text-align:center;}
+		#Howitworks{border:1px solid;padding:10px;text-decoration:none;font-size:1.2em;background-color:#d1c6ab;color:#706346;}
+		#Howitworks:hover{background-color:#c2ab74;color:white;box-shadow: 0px 5px 2px #473e26;cursor:pointer;transition: ease-in-out 0.3s;}
+
+/*-----categories-----*/
+		.categories{padding-top:5px;padding-bottom:45px;background-color:#EFE9D9;border:1px solid}
+		h3{font:1.5em Garamond;}
+		.corporate,.formal,.informal{width:80%;}
+		.back:hover{transform:translateX(-9px) rotate(-9deg);transition:ease-in-out 0.4s;} /*img corporate back*/
+		#corporate2,#formal2{width:40%;height:30%;}
+		.front:hover{transform:translate(1px) rotate(10deg);transition:ease-in-out 0.4s;} /*img corporate front*/	
+		img{width:25%;transform: translateX(7px);border:1px solid}
+		.back{left: 0;top: 7px;transform: translateX(7px) rotate(-2deg);}
+
+		.front{
+			left:0;
+			top:0;
+			transform: translateX(-10px) rotate(7deg);
+		}
+		.wrapper{
+			display: grid;
+			grid-template-columns:repeat(3,1fr); 
+		}
+		.wrapper div{box-shadow: 0 9px 10px #999;}
+		.wrapper p{
+			margin: auto;
+			width: 80%;
+			padding:20px;
+			text-align: justify;
+		}
+		.cardname{border:1px solid;padding:8px;padding-left:30px;padding-right:30px;width:100%;color:#634e1e;background-color:#d9cfb4;transition:padding 0.5s;}
+		.cardname:hover{padding-left:40px;padding-right:40px;padding-top:10px;padding-bottom:10px;}
+
+/*---------Step---------*/
+		.step{
+			background-color: #EFE9D9;
+			padding: 5px;
+			height: 600px;
+		}
+		.step div h5,.step div p{
+			margin: auto;
+			width: 100%; 
+			text-align: center;
+			font-size:1.4em;
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		footer{
+			margin:auto;
+			background-color: #AFA38D;
+			height:100%;
+			padding:10px;
+		}
+
+		.corporate, .informal, .formal{
+			border: black solid 1px;
+			box-shadow: 5px black;
+			background-color: #AFA38D;
+			height: 450px;
+			padding-top: 30px;
+			margin: auto;
+		}
+/*---------------media screen---------------*/
+		@media screen and (max-width: 600px){
+			body{
+				width: 100%;
+				height: 100%;
+				text-align: center; 
+			}
+			.navmenu{font-size:0.5em;padding:4%;text-align:center;}
+			header{
+				padding-top: 5px;
+				/*font:1.5em Garamond;*/
+			}
+			.slogan{
+				width: 100%;
+				height: 200px;
+				padding:0;
+				display: block
+			}
+			.slogan h1{
+				font:2em Garamond;
+				padding-top:10px;
+				text-align: center;
+				margin: auto;
+				padding-top:40px;
+			}
+			.slogan p{
+				width: 100%;
+				font:1em Garamond;
+				margin:0;
+				padding-top:15px;
+				padding-bottom:0;
+				text-align: center;
+			}
+			#Howitworks{display:none;border:1px solid;padding:5px;text-decoration:none;font-size:1em;background-color:#d1c6ab;color:#706346;}
+			#Howitworks:hover{display:none;}
+			img{
+				width: 30%;
+			}
+			.categories{
+				display: block;
+				font:1.5em Garamond;
+			}
+			.wrapper{
+				display: block;
+				margin: 0;
+				padding:0;
+			}
+			.wrapper span{
+				font:1em Garamond; 
+				margin:10px;
+			}
+			.wrapper p, .step div p{
+				width: 80%;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding:5px;
+				font:0.5em Arial;
+				border:1px solid ;
+				text-align: justify;
+			}
+			.step div p{font-size:0.8em;}
+			.step{height:100%;}
+			footer{
+				margin: 0;
+				padding: 10px;
+				font: 1em Garamond;
+				text-align:center;
+			}
+		}
+	</style>
+</head>
+<body>
+<!--header-------------------------------------------------------->
+	<header>
+	<p>E-INVITATION CARD</p>
+	<nav>
+		<a href="index.html" class="navmenu" style="text-decoration:none;background-color:#c9b47b">Home</a>
+		<a href="custompage.html" class="navmenu" style="text-decoration:none">Customize</a>
+		<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+	</nav>
+	</header>
+<!--Slogan-------------------------------------------------------->
+	<div class="slogan">
+		<h1>Make your Guests feel special</h1>
+		<p>Design your own invitation card.</p>
+		<a href="#L1" id="Howitworks">How it works</a>
+	</div>
+<!--Card Categories----------------------------------------------->
+	<section class="categories" id="gotocard">
+		<h3>Cards Categories:</h3>
+	<div class="wrapper">
+		<!-- corporate -->
+		<div class="corporate">
+			<a href="corporatetemplate1.html" style="color:black"><img class="back" id="corporate1" src="corporate1.jpg"></a>
+			<a href="corporatetemplate2.html" style="color:black"><img class="front" id="corporate2" src="corporate2.jpg"></a><br><br>
+			<a href="CorporateTemplate.html" class="cardname">Corporate</a>
+			<p>This template design is for you to make invitation card suitable for large company or businesses. It is a formal way to invite a large companies or businesses to attend your company business event. It is in a long and persuasive or in a simple format.</p>
+		</div>
+		<!-- Formal ------->
+		<div class="formal">
+			<a href="formaltemplate1.html" style="color:black"><img class="back" id="formal1" src="formal1.jpg"></a>
+			<a href="formaltemplate2.html" style="color:black"><img class="front" id="formal2" src="formal2.jpg"></a><br><br>
+			<a href="formalTemplate.html" class="cardname">Formal</a>
+			<p>This template is for you to make formal invitation card for formal event or ceremonies which follows a certain stipulated format. This type of letter is only suitable for official purpose to authorities, colleagues and seniors. This card is not necessary for personal contact, friends or family.</p>
+		</div>
+		<!-- Informal ------->
+		<div class="informal">
+			<a href="informaltemplate1.html" style="color:black"><img class="back" id="informal1" src="informal1.jpg"></a>
+			<a href="informaltemplate2.html" style="color:black"><img class="front" id="informal2" src="informal2.jpg"></a><br><br>
+			<a href="informaltemplate.html" class="cardname">Informal</a>
+			<p>A template that is design for you to make informal invitation car. This type of card is used to invite close personal contact, family or friends to an event. This template is not suitable for official purpose or to be send to large companies.</p>
+		</div>
+	</div>
+	</section>
+	
+	<section class="step">
+		<h3 id="L1">How it works:</h3>
+		<div>
+			<h5>STEP 1:</h5>
+			<p>Choose between 4 categories provided which is Corporate, Formal, Informal or Customize.</p>
+		</div>
+		<div>
+			<h5>STEP 2:</h5>
+			<p>Once you have selected, you will be directed to a template page. In this template page, there will be 2 types of template. Choose your preferred design or layout.</p>
+		</div>
+		<div>
+			<h5>STEP 3:</h5>
+			<p>Fill in the details/information to be displayed in your e-invitation card such as, venue, date, time, Etc. </p>
+		</div>
+		<div>
+			<h5>STEP 4:</h5>
+			<p>Once you have finished, you can preview your card and send it via emails.</p>
+		</div>
+	</section>
+
+	<footer>
+		<p>	&#169; Copyright 2021</p>
+	</footer>
+</body>
+</html>
+
+<!-- references
+https://www.greetingsisland.com/
+https://www.minted.com/wedding
+https://www.smilebox.com/
+https://www.weddingwishlist.com/wedding-invitations
+https://www.punchbowl.com/
+https://www.google.com/search?q=corporate+invitation+card+design&bih=979&biw=1920&hl=en-GB&sxsrf=ALeKk02OPLzFRJrMyjA_novzBrxKXp-e7A%3A1619330081379&ei=IQSFYNPNFsiEr7wP-rSz2A4&oq=corporate+invitation+cards&gs_lcp=Cgdnd3Mtd2l6EAEYBDIICAAQBxAKEB4yCAgAEAcQChAeMgIIADIECAAQHjIGCAAQChAeMgQIABAeMggIABAFEAoQHjIICAAQBRAKEB4yBggAEAgQHjoHCCMQsAMQJzoHCAAQRxCwAzoGCAAQBxAeOgoIABAIEAcQChAeOggIABAIEAcQHjoGCAAQDRAeOggIABANEAoQHjoKCAAQDRAFEAoQHjoICAAQCBANEB46CggAEAgQDRAKEB46CAgAEAgQChAeOgQIABANUMqUJFi2uSRglfgkaANwAngAgAHKAYgBoAuSAQU3LjUuMZgBAKABAaoBB2d3cy13aXrIAQnAAQE&sclient=gws-wiz
+https://www.youtube.com/watch?v=cNh-jFcCGKU
+https://www.youtube.com/watch?v=jfYWwQrtzzY
+https://www.youtube.com/watch?v=DP9-CVgkgDA
+https://codepen.io/davidicus/pen/emgQKJ
+https://wpdatatables.com/css-image-hover-effects/
+https://www.canva.com/design/play?category=tACFamV44DU&referrer=invitation-cards-landing-page&utm_source=onboarding#
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_picture
+https://fonts.google.com/specimen/Goudy+Bookletter+1911#standard-styles
+https://www.w3schools.com/jsreF/prop_win_localstorage.asp
+https://www.w3schools.com/jsreF/tryit.asp?filename=tryjsref_win_localstorage
+https://www.w3schools.com/html/html5_draganddrop.asp
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop2
+https://www.w3schools.com/css/css_navbar.asp
+https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black
+https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
+https://www.w3schools.com/css/css3_buttons.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+ -->

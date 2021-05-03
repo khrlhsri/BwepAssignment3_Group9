@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>Informal Template</title>
+	<style type="text/css">
+		body{
+			margin:0;
+		}
+		header{display:block;border:1px solid;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active{transform: translateY(2px);}
+
+		aside, section{
+			width: 100%;
+			height: 720px;
+			border: black solid 1px;
+		}
+
+		aside p, aside h3, section p, section h3{
+			text-align: center;
+			margin: auto;
+			padding: 40px;
+		}
+
+		#body{
+			background-color: #EFE9D9;
+			display: grid;
+			grid-template-areas: 
+			"one two"
+		}
+
+		#pgname{
+			margin: auto;
+			background-color: #EFE9D9;
+			text-align: center;
+			font-size: 30px;
+			padding: 10px;
+		}
+
+		img{
+			height: 50%;
+			width: 30%;
+			border:1px solid black;
+		}
+
+		#pic2{
+			width: 400px;
+			height: 300px;
+		}
+		
+		footer{
+			display: grid;
+			grid-template-columns: 15vh 1vh 15vh; 
+			background-color: #AFA38D;
+			justify-content: center;
+			margin: 0;
+		}
+		@media screen and (max-width:600px){
+			body{width:100%;height:100%margin:0;padding:0;}
+			.navmenu{margin:5px;padding-left:20px;padding-right:20px;}
+			#body{display:block;}
+			img{width: 50%}
+			#pic2{
+			width: 250px;
+			height: 230px;}
+			aside p,section p{padding:0;}
+			section p{padding:5px;}
+		}
+	</style>
+</head>
+<body>
+
+<header>
+	<p>E-INVITATION CARD</p>
+	<nav>
+		<a href="index.html" class="navmenu" style="text-decoration:none">Home</a>
+		<a href="custompage.html" class="navmenu" style="text-decoration:none">Customize</a>
+		<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+	</nav>
+</header>
+
+<nav id="pgname">CHOOSE TEMPLATE</nav>
+
+<div id="body">
+	<aside style="grid-area:one">
+		<h3>Template 1</h3>
+		<p><a href="informaltemplate1.html"><img src="informal1.jpg"></a></p>
+	</aside>
+
+	<section style="grid-area:two">
+		<h3>Template 2</p>
+		<p><a href="informaltemplate2.html"><img src="informal2.jpg" id="pic2"></a></p>
+	</section>
+</div>
+
+	<footer>
+		<h3 class="footer"></h3>
+	</footer>
+
+</body>
+</html>

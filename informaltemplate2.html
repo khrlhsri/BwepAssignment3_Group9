@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Informal - Template 2</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{margin:0;padding:0;height:100%;width:100%;}
+		header{display:block;border:1px solid;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active{transform: translateY(2px);}
+
+		#top{
+			padding-top: 30px;
+			padding-bottom: 30px;
+			font:2em 'Merriweather', serif;
+			text-align: left;
+			background-color: #e3d3af;
+		}
+
+		#wrapper{
+			height:900px;
+			background-color: #EFE9D9;
+			justify-content: center;
+			display:grid;
+			grid-template-columns: 25% 48%;
+			grid-template-areas:
+			"aside section";
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-top: 20px;
+			grid-gap:10px;
+		}
+		aside{ 
+			text-align: center;
+			height: 900px;
+			overflow:auto;
+		}
+		.border{
+			background-color: #fffff3;
+			text-align: center;
+			display: inline-block;
+		}
+		
+		span, p{
+			color:black;
+			font:20px Times New Roman;
+		}
+		#sticker, #textinput, #changebackcolor, #changefontcolor{
+			background-color:#bdb08e;border:1px dashed gray;
+		}
+		#sticker{
+			padding-bottom:10px;
+		}
+		.customise1{
+			margin-bottom:10px;
+			padding-top:9px;
+			padding-bottom:9px;
+			font:20px Arial;
+		}
+		input{
+			padding-bottom:10px;
+			padding-top: 10px;
+			margin:3px;
+			width: 250px;
+			text-align: center;
+		}
+		.button{width: 120px;cursor:pointer;text-decoration:none;text-align: center;transition-duration: 0.4s;}
+		.button:hover{box-shadow:0 10px 9px 0 rgba(0,0,0,0.2),0 17px 50px 0 rgba(0,0,0,0.10);}
+		.colorpicker{
+			width: 130px;
+			height: 30px;
+			margin-bottom:20px;
+		}
+		.buttoncolor{width: 210px;cursor:pointer;text-decoration:none;text-align: center;transition-duration: 0.4s;}
+		.buttoncolor:hover{box-shadow:0 10px 9px 0 rgba(0,0,0,0.2),0 17px 50px 0 rgba(0,0,0,0.10);}
+
+		section{
+			font-family: 'Libre Baskerville', serif;
+			font: 20px;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+		}
+		#preview1{
+			width:85%;
+			height:50%;
+			margin-top: 30px;
+			padding-top:10%;
+			margin:auto;
+		}
+		#preview1{
+			border:5px solid;
+			margin-left:10%;
+		}
+		.layout{
+			width: 380px;
+			margin: auto;
+			padding: 3px;
+		}
+		#previewone{font:30px;word-wrap: break-word; font: Arial;}
+		#previewtwo{margin-top:20px;width:80%;word-wrap: break-word;}
+		#previewthree{margin-top:30px;width:80%;word-break: break-word;}
+		#previewfour{margin-top:80px;}
+		#previewfive{margin-top:20px;}
+		#previewsix{margin-top:20px;margin-bottom:80px;}
+		#phrase{margin-top:20px;}
+		#card1{text-align:left;padding-left:10%;margin:0;margin-bottom:10px;color:#9c8341;}
+
+		@media screen and (max-width:600px){
+			body{padding:0;margin:0;width:100%;height:100%;}
+			#wrapper{display:block;height:100%;}
+			section{padding-bottom:20px}
+			#preview1{width:70%;padding-bottom:20px;}
+			#card1{display:block:}
+			#previewtwo{margin-top:40px;}
+			#previewthree{margin-top:30px;width: 190px;word-break: break-word;}
+			#previewfour{margin-top:80px;}
+			#previewfive{margin-top:20px;}
+			#previewsix{margin-top:20px;margin-bottom:60px;}
+			#phrase{margin-top:20px;}
+			#card1{text-align:left;padding-left:10%;margin:0;margin-bottom:10px;color:#9c8341;}
+		}
+	</style>
+</head>
+
+<body onload="fillin()">
+<header>
+	<p>E-INVITATION CARD</p>
+	<nav>
+		<a href="index.html" class="navmenu" style="text-decoration:none">Home</a>
+		<a href="custompage.html" class="navmenu" style="text-decoration:none">Customize</a>
+		<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+	</nav>
+</header>
+<div id="top">Informal - Template 2</div>
+<div id="wrapper">	
+	<aside>
+<!-- choose borderstyle -->
+		<div class="customise1" id="sticker">
+			<span>Choose and drag the border style below:</span><br><br>
+			<select onchange="borderStyle(this.value)" id="stylebtn">
+				<option value="0">Choose border style</option>
+				<option value="1">Border 1</option>
+				<option value="2">Border 2</option>
+				<option value="3">Plain</option>
+			</select>
+		</div>
+
+
+<!-- Enter text for the invitation card-->
+		<div class="customise1" id="textinput"><span>Enter text below:</span><br><br>
+			<input type="text" id="one" placeholder="Event"><br>
+			<input type="text" id="two" placeholder="EventDescription"><br>
+			<input type="text" id="three" placeholder="Location"><br>
+			<!-- <input type="text" id="four" placeholder="Place of the event"><br> -->
+			<input type="text" id="five" placeholder="Date"><br>
+			<input type="time" id="six" placeholder="Time"><br>
+
+			<input class="button" type="button" value="Save Favourite" onclick="save()">
+			<input class="button" type="button" value="Load Favourite" onclick="load()">
+		</div>
+
+
+
+<!-- Change background color -->
+		<div id="changebackcolor">
+			<div class="customise1"><p id="textbackchange">Change background color:</p>
+			<input class="colorpicker" type="color" id="backcolor" onclick="backcolorchange()"><br>
+			<!--<input class="buttoncolor" type="button" id="backcolorbutton" value="Click to change background color" onclick="backcolorchange()">-->
+			</div>
+		</div>
+
+
+<!-- Change font color -->			
+		<div id="changefontcolor">
+			<div class="customise1"><p>Change font color:</p>
+				<input class="colorpicker" type="color" id="fontcolor" onclick="fontcolorchange()"><br>
+			<!--<input class="buttoncolor" type="button" id="fontcolorbutton" value="Click to change font color" onclick="fontcolorchange()">-->
+			</div>
+		</div>
+<!-- change font style
+		<div class="customise1"><span>change font style</span>
+			<div>
+				
+			</div>
+		</div>  -->
+	</aside>
+	
+	<section>
+		<p id="card1">Preview Card</p>
+		<div id="preview1">
+				<div class="layout" id="previewone">Event</div>
+				<div class="layout" id="previewtwo">Event description</div>
+				<div class="layout" id="previewthree">Location</div>
+			<!-- 	<div class="layout" id="previewfour">Date</div> -->
+				<div class="layout" id="previewfive">Place</div>
+				<div class="layout" id="previewsix">Time</div>
+				<div class="layout" id="phrase">come and join us!</div>
+		</div>
+	</section>
+	</div>
+
+<!-- internal scripts -->
+<script type="text/javascript">
+	//trial enter
+		var input1 = document.getElementById("one");
+		var input2 = document.getElementById("two");
+		var input3 = document.getElementById("three");
+		var input4 = document.getElementById("five");
+		var input5 = document.getElementById("six");
+
+		var display1 = document.getElementById("previewone");
+		var display2 = document.getElementById("previewtwo");
+		var display3 = document.getElementById("previewthree");
+		var display4 = document.getElementById("previewfive");
+		var display5 = document.getElementById("previewsix");
+
+		input1.addEventListener('input', letter1 =>{display1.textContent = letter1.target.value;});
+		input2.addEventListener('input', letter2 =>{display2.textContent = letter2.target.value;});
+		input3.addEventListener('input', letter3 =>{display3.textContent = letter3.target.value;});
+		input4.addEventListener('input', letter4 =>{display4.textContent = letter4.target.value;});
+		input5.addEventListener('input', letter5 =>{display5.textContent = letter5.target.value;});
+	//
+
+	function save(){
+		var host = document.getElementById("one");
+		var event = document.getElementById("two");
+		var desc = document.getElementById("three");
+		// var place = document.getElementById("four");
+		var date = document.getElementById("five");
+		var time = document.getElementById("six");
+
+		localStorage.setItem("one2",host.value);
+		localStorage.setItem("two2",event.value);
+		localStorage.setItem("three2",desc.value);
+		// localStorage.setItem("four",place.value);
+		localStorage.setItem("five2",date.value);
+		localStorage.setItem("six2",time.value);
+	}
+	
+	function load(){		
+		previewone.innerHTML="You are invited to my " + localStorage.getItem("one2") + " party!";
+		previewtwo.innerHTML=localStorage.getItem("two2");
+		previewthree.innerHTML="Location: " + localStorage.getItem("three2");
+		// previewfour.innerHTML=localStorage.getItem("four");
+		previewfive.innerHTML="Date: "+ localStorage.getItem("five2");
+		previewsix.innerHTML="Time: " + localStorage.getItem("six2");
+	}
+
+	
+
+
+	function fillin(){
+		var host = document.getElementById("one");
+		var event = document.getElementById("two");
+		var desc = document.getElementById("three");
+		// var place = document.getElementById("four");
+		var date = document.getElementById("five");
+		var time = document.getElementById("six");
+	}
+
+	function backcolorchange() {
+		let bgcolor = document.getElementById("backcolor");
+		let main = document.getElementById("preview1");
+		main.style.backgroundColor = bgcolor.value;
+		bgcolor.addEventListener("input",function(ev){
+		preview1.style.backgroundColor = ev.target.value;
+		},false);
+	} 
+	function fontcolorchange() {
+		let fntcolor = document.getElementById("fontcolor");
+		let text = document.getElementById("preview1");
+		text.style.color = fntcolor.value;
+		fntcolor.addEventListener("input",function(ev){
+		preview.style.color = ev.target.value;
+		},false);
+	}
+	function borderStyle(value) {
+		var preview1 = document.getElementById("preview1");
+		if (value == 1){
+			preview1.style.backgroundImage = "url(borderinformal3.png)"
+			preview1.style.backgroundSize = "100% 100%";
+		}
+		else if (value == 2){
+			preview1.style.backgroundImage = "url(borderinformal4.jpg)"
+			preview1.style.backgroundSize = "100% 100%";
+		}
+		else if (value == 3){
+			preview1.style.backgroundImage = "none";
+		}
+	}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corporate - Template 2</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Goudy+Bookletter+1911&family=Lobster&display=swap&family=Merriweather:wght@300&display=swap&family=Cormorant+Garamond:ital,wght@1,500&family=Sacramento&display=swap" rel="stylesheet">
+	
+	<style type="text/css">
+		body{
+			width:100%;
+			height:100%;
+			margin:0;
+			font:16px 'Goudy Bookletter 1911';
+			background-color: #fff8e8;
+		}
+		header{display:block;border:1px solid;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active{transform: translateY(2px);}
+		.pgname{
+			padding-top: 30px;
+			padding-bottom: 30px;
+			font:2em 'Merriweather', serif;
+			text-align: left;
+			background-color: #e3d3af
+		}
+		.wrapper{
+			display:grid;
+			grid-template-columns: 30% 56%;
+			grid-template-areas: 
+			"one two";
+			margin-bottom:10px;
+			font-size:2em;
+			justify-content: center;
+			margin:20px;
+			height:700px;
+			padding-bottom;
+		}
+
+		span{font-size:0.7em;}
+
+		#logo img{border:1px solid gray;}
+		.formenu{border:4px dashed gray;margin-bottom:30px;width:60%;padding:10px;padding-bottom:20px;margin:auto;background-color:#deceab;text-align:center }
+		#logoMediascreen{display:none;}
+		input{
+			font-size:0.4em;
+			text-align:center; 
+			margin:5px;
+			width:80%;
+			padding-top:5px;padding-bottom:5px;
+		}
+		#date, #time{width:45%;}
+		
+		button{display:block;width:90px;cursor:pointer;text-decoration:none;text-align: center;transition-duration: 0.4s;margin:auto;margin-top: 10px;padding:3px;}
+		button:hover{box-shadow:0 10px 9px 0 rgba(0,0,0,0.2),0 17px 50px 0 rgba(0,0,0,0.10);}
+		#addNpreview{display:none;}
+		
+		.card{
+			display: grid;
+			grid-template-columns: 45% 55%; 
+			grid-template-areas: 
+			"left right"
+			;
+			width:80%;
+			height:55%;
+			background-image: url("template2.png");
+			background-size: 100% 100%;
+			margin-top:30px;
+			margin-left:30px;
+			border:1px solid;
+		}
+		#txtcntnt{display:block;padding:10px;}
+		#txtinvited {margin:auto;}
+		.content{
+			padding:10px;
+			width:30%;
+			font-size:16px;
+			color:#f5da90;
+			word-wrap: break-word;
+			text-align:center;
+			margin:auto;
+		}
+		#previewlogo{border:1px dashed gray;width:200px;height:150px;margin:auto;margin-bottom:10%;}
+		#invited{font:1.4em 'Sacramento', cursive;border-top:5px double;border-bottom:5px double;color: gold;}
+		#previewevent2{font:1em 'Lobster';width:90%;margin-top:15%;color:#d6c16b;}
+		#previewhost1,#previewplace3,#previewdate4,#previewtime5{width:85%;margin-top: 0;color:white;font-size:0.6em;}
+
+		@media screen and (max-width:600px){
+			body{margin:0;padding:0;width:100%;height:100%}
+			header{width:100%;padding:10px;font-size:1em;}
+			.pgname{width:100%;margin:0;padding:0;}
+			.wrapper{display:block;height:550px;}
+			.pgname,section{padding:10px;font-size:1.3em;width:100%;height:100%}
+			#logo{display:none}
+			#logoMediascreen{display:block;margin:0;padding:0;padding-bottom:0;margin:auto;width:64%;border:none;}
+			#logoMediascreen p,span {font-size:1em;margin:0;padding:0;padding-top:20px;}
+			.formenu{margin-bottom:30px;font-size:0.7em;}
+			.favbtn{display:none;}
+			#addNpreview{display:block;}
+			input{font-size:0.6em;}
+			.card{
+			display: grid;
+			grid-template-columns: 40% 60%; 
+			grid-template-areas: 
+			"left right"
+			;
+			width:80%;
+			height:300px;
+			}
+
+			#previewlogo{width:70%;height:130px;margin:auto;margin-bottom:10%;background-size: 100% 100%}
+			#invited{font:0.6em 'Sacramento', cursive;}
+			#previewevent2{font:0.5em 'Lobster';margin-bottom:10px;}
+			#previewhost1,#previewplace3,#previewdate4,#previewtime5{width:85%;margin-top: 0;padding:0;color:white;font-size:0.3em;}			
+		}
+	</style>
+</head>
+<body>
+<!-- header -->
+	<!-- top -->
+	<header>
+	<p>E-INVITATION CARD</p>
+		<nav>
+			<a href="index.html" class="navmenu" style="text-decoration:none">Home</a>
+			<a href="custompage.html" class="navmenu" style="text-decoration:none">Customize</a>
+			<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+		</nav>
+	</header>
+	<div class="pgname" id="pagename">Corporate - Template 2</div>
+
+<!-- main body -->
+<div class="wrapper">
+
+	<!-- aside -->
+	<!-- Left -->
+	<aside class="menu" style="grid-area:one">
+	<div class="formenu">
+	<div class="container" id="logo">
+		<span>Choose Logo:</span><br>
+		<img src="pb1.png" class="logo" id="dragitem1" style="width:100%;height:100%;" draggable="true" ondragstart="drag(event)">
+		<img src="pb2.png" class="logo" id="dragitem2" style="width:100%;height:100%;" draggable="true" ondragstart="drag(event)">
+	</div>
+<!-- below is only displya when the screen width is below 600px-->
+	<div class="logocontainer" id="logoMediascreen">
+		<p>Choose logo:</p>
+		<select onchange="logoChange(this.value)" id="logoChange">
+			<option value="0">Please choose logo</option>
+			<option value="1">Politeknik Brunei Main logo</option>
+			<option value="2">Politeknik Brunei Secondary logo</option>
+		</select>
+	</div>
+
+	<span>Enter your text below:</span><br>
+	<input type="text" id="event2" placeholder="Enter event name"><br>
+	<input type="text" id="host1" placeholder="Enter host name"><br>
+	<input type="text" id="place3" placeholder="Enter place"><br>
+	<input type="text" id="date4" placeholder="Enter date"><br>
+	<input type="time" id="time5" placeholder="choose time"><br>
+	<button class="favbtn">add to favourite</button>
+	<a href="#prevCard"><button class="favbtn1" id="addNpreview">add to favourite and preview card</button></a> <!-- this button only display when the screen width is below 600px -->
+	<button class="loadfav">load favourite</button>
+	</div>
+	</aside>
+
+	<!-- section -->
+	<!-- right / main area-->
+	<section class="preview" style="grid-area:two">
+		<div class="card" id="prevCard">
+			
+			<div id="txtinvited" style="grid-area:left">
+			<div class="container" id="previewlogo" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<span id="invited">You're invited to</span>
+			</div>
+
+			<div id="txtcntnt" style="grid-area:right">
+			<p class="content" id="previewevent2">Event name</p>
+			<p class="content" id="previewhost1">Host name</p>
+			<p class="content" id="previewplace3">Place</p>
+			<p class="content" id="previewdate4">Date</p>
+			<p class="content" id="previewtime5">Time</p>
+			</div>
+		</div>
+	</section>
+	<!-- <button>Send to friend</button> -->
+</div>
+<!-- code -->
+
+	<script type="text/javascript">
+//drag and drop function
+		function allowDrop(ev){
+  		ev.preventDefault();
+		}
+
+		function drag(ev) {
+  		ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) {
+  		ev.preventDefault();
+  		var data = ev.dataTransfer.getData("text");
+  		var isLeft = 'dragitem1' == data || "dragitem2" == data;
+  		var nodeCopy = document.getElementById(data).cloneNode(true);
+  		nodeCopy.id = "img" + ev.target.id;
+  		if (!isLeft) {
+    	sourceNode = document.getElementById(data);
+    	sourceNode.parentNode.removeChild(sourceNode);
+  		}
+  		ev.target.appendChild(nodeCopy);
+  		ev.stopPropagation();
+  		return false;
+		} 
+
+		var input1 = document.getElementById("host1");
+		var input2 = document.getElementById("event2");
+		var input3 = document.getElementById("place3");
+		var input4 = document.getElementById("date4");
+		var input5 = document.getElementById("time5");
+
+		var display1 = document.getElementById("previewhost1");
+		var display2 = document.getElementById("previewevent2");
+		var display3 = document.getElementById("previewplace3");
+		var display4 = document.getElementById("previewdate4");
+		var display5 = document.getElementById("previewtime5");
+
+		var addfavbtn = document.querySelector('.favbtn');
+		var loadfavbtn	= document.querySelector('.loadfav');
+		var addfavbtn1 = document.querySelector('.favbtn1');
+
+// input text will be display at the preview card
+		input1.addEventListener('input', letter1 =>{display1.textContent = letter1.target.value;})
+		input2.addEventListener('input', letter2 =>{display2.textContent = letter2.target.value;})
+		input3.addEventListener('input', letter3 =>{display3.textContent = letter3.target.value;})
+		input4.addEventListener('input', letter4 =>{display4.textContent = letter4.target.value;})
+		input5.addEventListener('input', letter5 =>{display5.textContent = letter5.target.value;})
+
+// save to local storage
+		var savetolocalstorage = save =>{
+			localStorage.setItem("hostName2",display1.textContent);
+			localStorage.setItem("eventName2",display2.textContent);
+			localStorage.setItem("place2",display3.textContent);
+			localStorage.setItem("date2",display4.textContent);
+			localStorage.setItem("time2",display5.textContent);
+		}
+// load from local storage
+		var loadlocalstorage = load =>{
+			input1.value=localStorage.getItem("hostName2");
+			input2.value=localStorage.getItem("eventName2");
+			input3.value=localStorage.getItem("place2");
+			input4.value=localStorage.getItem("date2");
+			input5.value=localStorage.getItem("time2");
+
+			previewhost1.innerHTML=localStorage.getItem("hostName2");
+			previewevent2.innerHTML=localStorage.getItem("eventName2");
+			previewplace3.innerHTML="Where: " + localStorage.getItem("place2");
+			previewdate4.innerHTML="Date: " + localStorage.getItem("date2");
+			previewtime5.innerHTML="Time: " + localStorage.getItem("time2");
+		}
+// button for save and load
+		addfavbtn.addEventListener('click',savetolocalstorage);
+		addfavbtn1.addEventListener('click',savetolocalstorage);
+		loadfavbtn.addEventListener('click',loadlocalstorage);
+
+//choose logo
+		function logoChange(value){
+			var display = document.getElementById("previewlogo");
+			if (value==1){
+				display.style.backgroundImage="url(pb1.png)"
+			}
+			else if(value==2){
+				display.style.backgroundImage="url(pb2.png)"
+			}
+		}
+	</script>
+</body>
+</html>

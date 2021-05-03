@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customisation Page</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Slabo+27px&display=swap&family=Merriweather+Sans:ital@1&family=Playfair+Display:ital@1&family=Source+Serif+Pro&display=swap&family=Scheherazade&display=swap" rel="stylesheet">
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ css style ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<style type="text/css">
+		body{margin:0;padding:0;width:100%;height:100%;font:16px 'Slabo 27px', serif;background-color:#fffbf2;background-size: 100% 100%}
+		
+		/*-----------------top------------------*/
+		header{display:block;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active{transform: translateY(2px);}
+
+		/*-------------page content-------------*/
+		.wrapper{
+			border:1px solid;
+			height: 100%;
+			display: grid;
+			grid-template-areas:
+			"aside section";
+			grid-template-columns:30% 40%;
+			justify-content: center;
+			text-align: center;
+		}
+		aside,section{margin:20px;}
+		aside{border:1.5px solid #ab9f84;}
+		#headmenu{padding:10px;font:1.1em tahoma;margin-bottom:10px;background-color:#e3d4b1}
+		#forgreeting{
+			display:grid;
+			grid-template-columns: 30% 50%;
+			grid-template-areas:
+			"span ul"
+			;
+			justify-content: center;
+			margin-bottom:20px; 
+		}
+		#greet,#salute,#contenttext,#textfont,#designcard,#backandfontcolor,#send{background-color:#ede7da;border:1px dashed #c4b9a1}		
+		#greet{margin:0;text-align: left;list-style:square }
+
+		#forsalutation{
+			display:grid;
+			grid-template-columns: 30% 50%;
+			grid-template-areas:
+			"span salute"
+			;
+			justify-content: center;
+			margin-bottom:20px
+		}
+		#contenttext{margin-bottom:20px;padding:10px;}
+		#forsalutation span,#contenttext span{padding:5px;}
+		#contenttext input{margin-top:10px;width:80%;padding:5px;font-size:0.7em;}
+		#textfont,#designcard{padding:25px;margin-bottom: 10px}
+		#textfont,#designcard{
+			display:grid;
+			grid-template-columns: 45% 50%;
+			grid-template-areas:
+			"span salute"
+			;
+			justify-content: center;
+			margin-bottom:20px
+		}
+		#textfont span,#designcard span{text-align:left;}
+		#textfont span,#designcard span,#textfont select,#designcard select{padding:10px;}
+		#chngbckclr,#chngfntclr{
+			display:grid;
+			grid-template-columns: 30% 15% 40%;
+			grid-template-areas:
+			"span bgcolor backcolorbtn"
+			;
+			justify-content: center;
+		}
+		#backandfontcolor{padding-top:20px;padding-bottom:20px;}
+		#chngbckclr span,#chngfntclr span{padding:2px;text-align: left}
+		.color{padding:1px;justify-content: center}
+		#btn{text-align:right;margin:5px;}
+		button{padding:5px;}
+		#send{padding:10px;margin-top:50px;}
+		#send input{padding:5px;width:40%;text-align: center}
+		#btnsend{width:20%;}
+
+/*modal box*/
+		#modalbox{
+			display:none;
+			position: fixed;
+			width: 40%;
+			padding:30px;
+			font-size:1.5em;
+			border:1px solid;
+			margin-left:30%;
+			margin-top:5%;
+			background-color: white;
+			z-index: 1;
+		}
+		#modalbox span{display:none; float: right;font-size: 28px;padding:0;margin:0;z-index:1;cursor:pointer;}
+		#backmodalbox{display:none;border:1px solid;width:100%;height:100%;position:fixed;background-color:rgb(0, 0, 0,0.5);}
+
+/*preview card*/
+		#cardborder{background-size:100% 100%}
+			#previewcard{border:2px solid;display: block;width:20%;height:470px;margin:auto;margin-top:10px;position:fixed;margin-left:50px;word-wrap: break-word;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);z-index: -1}
+				#greetingsbox{margin-top:20%;}
+				#display1{font-size:1.5em;width:80%;margin:auto;} /*event name*/
+				#display2,#display3,#display4,#display5,#display6{margin:1px;margin:auto;font-size:0.9em;}
+				#display2{width:85%;} #display3,#display4,#display5{width:75%;}
+				#salutationbox{margin:0;}
+				#bottom{position:absolute;bottom:40px;width:70%;left:13%;padding:5px;}
+				#display6{padding:5px;}
+
+		@media screen and (max-width:600px){
+			body{margin:0;padding:0;width:100%;height:100%;}
+			header{font-size:1em;text-align:center;}
+			.pgname{font-size:1.5em;}
+			.wrapper{display:block;}
+			aside{width:70%;height:50%;margin:auto;margin-top:20px;}
+			section{border:none;}
+			#cardborder{background-size:100% 100%}
+			#previewcard{border:2px solid;display:block;width:50%;height:460px;margin:auto;margin-top:10px;position:relative;margin-left:20%;margin-bottom:20px}
+			#greetingsbox{margin-top:20%;}
+			#display1{font-size:1.5em;width:80%;margin:auto;} 
+			#salutationbox{margin:0;}
+			#bottom{position:absolute;width:70%;padding:2px;border:1px solid;}
+			#display6{padding:5px;}
+	</style>
+<!------------------------------------------------------------------------------------------>
+</head>
+<body>
+<div id="modalbox">Invitation card sent!<span id="close">&times;</span></div>
+<div id="backmodalbox"></div>
+
+	<!-- header -->
+	<!-- top -->
+<header>
+	<p>E-INVITATION CARD</p>
+	<nav>
+		<a href="index.html" class="navmenu" style="text-decoration:none">Home</a>
+		<a href="custompage.html" class="navmenu" style="text-decoration:none;background-color:#c9b47b">Customize</a>
+		<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+	</nav>
+</header>
+
+<div class="wrapper">
+<!--------------------------------------- Menu --------------------------------------------->
+	<aside>
+		<div>
+			<div id="headmenu">Enjoy customising your invitation card</div>
+			<!-- Choose greetings -->
+			<div id="forgreeting">
+			<span>Select greetings:</span>
+				<ul id="greet">
+				<li id="load1" value="1" onclick="greetingschoice(this.value)"></li>
+				<li id="load2" value="2" onclick="greetingschoice(this.value)"></li>
+				<li id="load3" value="3" onclick="greetingschoice(this.value)"></li>
+				<li id="load4" value="4" onclick="greetingschoice(this.value)"></li>
+				</ul>
+			</div>
+			<!-- Choose salutation -->
+			<div id="forsalutation">
+				<span>Salutation:</span>
+				<div id="salute">
+				<input type="radio" name="salutation" id="dear" value="1" onclick="salutationchoice(this.value)"><label for="dear">Dear,</label> 
+				<input type="radio" name="salutation" id="mrs" value="2" onclick="salutationchoice(this.value)"><label for="mrs">Mrs.</label>
+				<input type="radio" name="salutation" id="ms" value="3" onclick="salutationchoice(this.value)"><label for="ms">Ms.</label>
+				</div>
+			</div>
+			<!-- Insert text -->	
+			<div id="contenttext">
+			<span>Insert text below:</span><br>
+			<input type="text" id="input1" placeholder="Enter event name"><br>
+			<input type="text" id="input2" placeholder="Enter event description"><br>
+			<input type="text" id="input3" placeholder="Place"><br>
+			<input type="date" id="input4" placeholder="Date"><br>
+			<input type="time" id="input5" placeholder="Time"><br>
+			<input type="text" id="input6" placeholder="Recipient's name"><br>
+			</div>
+			<!-- change font style -->
+			<div id="textfont">
+				<span>Choose font:</span>
+				<select onchange="fontstyle(this.value)" id="fontstyle">
+					<option value="0">Select font style</option>
+					<option value="1" id="ArialNarrow" style="font-family:Arial Narrow">Arial Narrow</option>
+					<option value="2" id="Merienda" style="font-family:'Merienda', cursive">Merienda</option>
+					<option value="3" id="MerriweatherSans" style="font-family:'Merriweather Sans', sans-serif">Merriweather Sans</option>
+					<option value="4" id="PlayfairDisplay" style="font-family:'Playfair Display', serif">Playfair Display</option>
+					<option value="5" id="SourceSerifpro" style="font-family:'Source Serif Pro', serif">Source Serif Pro</option>
+				</select>
+			</div>
+			<!-- change border -->
+			<div id="designcard">
+				<span>Choose card design:</span>
+				<select onchange="cardDesign(this.value)" id="cardDesign">
+					<option value="0">Select Card Design</option>
+					<option value="1">Card design 1</option>
+					<option value="2">Card design 2</option>
+					<option value="3">Card design 3</option>
+					<option value="4">Card design 4</option>
+					<option value="5">Card design 5</option>
+				</select>
+			</div>
+			<!-- change background & font color -->
+			<div id="backandfontcolor">
+				<div id="chngbckclr">
+				<span>Background color:</span>
+				<input type="color" class="color" id="bgcolor">
+				<input type="button" id="backcolorbtn" value="Change background color" onclick="bgcolorchange()">
+				</div>
+				<div id="chngfntclr">
+				<span>Font color:</span>
+				<input type="color" class="color" id="ftcolor">
+				<input type="button" id="fontcolorbtn" value="Change font color" onclick="ftcolorchange()">
+				</div>
+			</div>
+			<div id="btn">
+			<button class="save">Add to favorite</button>
+			<button class="load">load Favorite</button>
+			</div>
+			<div id="send">
+			<p>Enter Recipient's email:</p>
+			<input type="type" name="" required placeholder="Please enter recipient's email" >
+			<button id="btnsend">Send</button>
+			</div>
+		</div>
+	</aside>
+<!--------------------------------------- PREVIEW CARD ---------------------------------------->
+	<section>
+		<div id="previewcard"> <!-- untuk display card border -->
+			<div id="card">
+				<p id="greetingsbox">Greetings</p>
+				<p id="display1">Event name</p>
+				<p id="display2">Event description</p>
+				<p id="display3">Event place</p>
+				<p id="display4">Event date</p>
+				<p id="display5">Event time</p>
+				<div id="bottom">
+				<p id="salutationbox">salutation</p>
+				<p id="display6">Recipient's name</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<script type="text/javascript">	
+		var input1 = document.getElementById("input1"); //input event name
+		var input2 = document.getElementById("input2"); //input event description
+		var input3 = document.getElementById("input3"); //input event place
+		var input4 = document.getElementById("input4"); //input event date
+		var input5 = document.getElementById("input5"); //input event time
+		var input6 = document.getElementById("input6"); //input recipient name
+
+		var displaya = document.getElementById("display1"); //display event name
+		var displayb = document.getElementById("display2"); //display event description
+		var displayc = document.getElementById("display3"); //display event place
+		var displayd = document.getElementById("display4"); //display event date
+		var displaye = document.getElementById("display5"); //display event time
+		var displayf = document.getElementById("display6"); //display recipient's
+
+		var addfavbtn = document.querySelector('.save'); 	//save 'favourite' button
+		var loadfavbtn	= document.querySelector('.load'); 	//load 'favourite' button
+
+		let card = document.getElementById("previewcard"); //variable for preview card 
+
+		var modalbox = document.getElementById("modalbox");
+		var btnsend = document.getElementById("btnsend");
+		var backmodalbox = document.getElementById("backmodalbox");
+		var closemodal = document.getElementById("close");
+
+// display modal box after send to recipient name
+		btnsend.onclick = function(){
+		modalbox.style.display="block";
+		closemodal.style.display="block";
+		backmodalbox.style.display="block";
+		}
+
+		closemodal.onclick = function(){
+		modalbox.style.display="none";
+		closemodal.style.display="none";
+		backmodalbox.style.display="none";
+		}
+//close modal box
+
+
+// input text will be display at the preview card
+		input1.addEventListener('input', letter1 =>{displaya.textContent = letter1.target.value;}) 
+		input2.addEventListener('input', letter2 =>{displayb.textContent = letter2.target.value;})
+		input3.addEventListener('input', letter3 =>{displayc.textContent = letter3.target.value;})
+		input4.addEventListener('input', letter4 =>{displayd.textContent = letter4.target.value;})
+		input5.addEventListener('input', letter5 =>{displaye.textContent = letter5.target.value;})
+		input6.addEventListener('input', letter6 =>{displayf.textContent = letter6.target.value;})
+// save to local storage
+		var savetolocalstorage = save =>{
+			localStorage.setItem("input1",display1.textContent);
+			localStorage.setItem("input2",display2.textContent);
+			localStorage.setItem("input3",display3.textContent);
+			localStorage.setItem("input4",display4.textContent);
+			localStorage.setItem("input5",display5.textContent);
+			localStorage.setItem("input6",display6.textContent);
+		}
+// load from local storage
+		var loadlocalstorage = load =>{
+			input1.value=localStorage.getItem("input1");
+			input2.value=localStorage.getItem("input2");
+			input3.value=localStorage.getItem("input3");
+			input4.value=localStorage.getItem("input4");
+			input5.value=localStorage.getItem("input5");
+			input6.value=localStorage.getItem("input6");
+
+			display1.innerHTML=localStorage.getItem("input1");
+			display2.innerHTML=localStorage.getItem("input2");
+			display3.innerHTML="Where: " + localStorage.getItem("input3");
+			display4.innerHTML="Date: " + localStorage.getItem("input4");
+			display5.innerHTML="Time: " + localStorage.getItem("input5");
+			display6.innerHTML=localStorage.getItem("input6");
+		}
+
+//Button for save and load from local storage
+		addfavbtn.addEventListener('click',savetolocalstorage);
+		loadfavbtn.addEventListener('click',loadlocalstorage);
+
+//change background color from (https://www.youtube.com/watch?v=DP9-CVgkgDA&list=RDCMUCRLtb7abeDnVQ12VNZqU13Q&start_radio=1&t=117)
+	function bgcolorchange(){
+		let bgroundcolor = document.getElementById("bgcolor");
+		card.style.backgroundColor = bgroundcolor.value;
+		bgroundcolor.addEventListener("input",function(ev){
+		card.style.backgroundColor = ev.target.value;
+		},false);
+		}
+
+//change font color	
+	function ftcolorchange(){
+		let fontcolor = document.getElementById("ftcolor");
+		card.style.color = fontcolor.value;
+		fontcolor.addEventListener("input",function(ev){
+		card.style.color = ev.target.value;
+		},false);
+		}
+
+//change font style
+	function fontstyle(value){
+		if (value==1){card.style.fontFamily = "Arial Narrow"}
+		else if (value==2){card.style.fontFamily = "'Merienda', cursive"}
+		else if (value==3){card.style.fontFamily = "'Merriweather Sans', sans-serif"}
+		else if (value==4){card.style.fontFamily = "'Playfair Display', serif"}
+		else if (value==5){card.style.fontFamily = "'Source Serif Pro', serif"}
+	}
+//Change Card Design
+	function cardDesign(value){
+		if (value==1) {
+			card.style.backgroundImage = "url(design3.png)";
+			card.style.backgroundSize = "105% 100%";
+		}
+		else if (value==2){
+			card.style.backgroundImage = "url(border2.png)";
+			card.style.backgroundSize = "100% 100%";
+		}
+		else if(value==3){
+			card.style.backgroundImage = "url(design2.png)";
+			card.style.backgroundSize = "100% 100%";
+		}
+		else if (value==4) {
+			card.style.backgroundImage = "url(design4.png)";
+			card.style.backgroundSize = "100% 100%";
+		}
+		else if (value==5){
+			card.style.backgroundImage = "url(design1.png)";
+			card.style.backgroundSize = "100% 100%";
+		}
+
+	}
+//Change salutation
+	var salutation = document.getElementById("salutationbox")
+	function salutationchoice(value){
+		if(value==1){
+			salutation.innerHTML="Dear,";
+		}
+		else if (value==2){
+			salutation.innerHTML="Mrs,";
+		}
+		else if (value==3){
+			salutation.innerHTML="Ms,";
+		}	
+	}
+//predefined Greetings
+	//variable for load item from localStorage 
+	var load1 = document.getElementById("load1");
+	var load2 =	document.getElementById("load2");
+	var load3 = document.getElementById("load3");	
+	var load4 = document.getElementById("load4");
+
+	//save the greeting lists to local storage
+	localStorage.setItem("greeting1","اَلسَلامُ عَلَيْكُم وَرَحْمَةُ اَللهِ وَبَرَكاتُهُ");
+	localStorage.setItem("greeting2","Salam Sejahtera");
+	localStorage.setItem("greeting3","Invitation to:");
+	localStorage.setItem("greeting4","Good Day!");
+
+	//Display the local storage to the specific element
+	load1.innerHTML = localStorage.getItem("greeting1");
+	load2.innerHTML = localStorage.getItem("greeting2");
+	load3.innerHTML = localStorage.getItem("greeting3");
+	load4.innerHTML = localStorage.getItem("greeting4");
+
+	function greetingschoice(value){
+		if(value==1){greetingsbox.innerHTML=localStorage.getItem("greeting1");}
+		else if(value==2){greetingsbox.innerHTML=localStorage.getItem("greeting2");}
+		else if (value==3){greetingsbox.innerHTML=localStorage.getItem("greeting3");}
+		else if(value==4){greetingsbox.innerHTML=localStorage.getItem("greeting4");}
+	}
+</script>
+</body>
+</html>

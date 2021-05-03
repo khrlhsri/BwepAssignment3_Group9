@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formal - Template 2</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Goudy+Bookletter+1911&family=Lobster&display=swap&family=Goudy+Bookletter+1911&family=Merriweather:wght@300" rel="stylesheet">
+	
+	<style type="text/css">
+		body{width:100%;height:100%;padding:0;margin:0;}
+
+		#top{
+			padding-top: 30px;
+			padding-bottom: 30px;
+			font:2em 'Merriweather', serif;
+			text-align: left;
+			background-color: #e3d3af;
+		}
+		header{display:block;border:1px solid;padding:5px;font:1.5em impact;text-align:center;background-color: #fff8e8}
+		header p{margin:15px;}
+		.navmenu{display:inline-block;font:0.7em Arial Narrow;border:1px solid;margin:2px;margin-left:20px;margin-right:20px;padding:10px;width:10%;background-color:#fff4d9;color:#706346;}
+		.navmenu:hover{background-color:#fff4d9;box-shadow: 0px 5px 1px #e3ded3;cursor:pointer;}
+		.navmenu:active{transform: translateY(2px);}
+		footer{
+			background-color: #AFA38D;
+			justify-content: center;
+			padding:10px;
+			text-align:center;
+		}
+		.wrapper{
+			background-color: #EFE9D9;
+			display:grid;
+			height:700px;
+			grid-template-columns: 40% 50%;
+			grid-template-areas: 
+			"one two";
+			text-align: center;
+			font-size:2em;
+		}
+		aside, section{
+			margin-bottom:20px;
+		}
+
+		.menu{
+			padding-top: 20px;
+		}
+		.formenu{border:4px dashed gray;width:50%;padding:10px;padding-bottom:20px;margin:auto;}
+		input{
+			font-size:0.5em;
+			text-align:center; 
+			margin:5px;
+			width:80%;
+			padding-top:9px;padding-bottom:9px;
+		}
+		#date, #time{width:45%;}
+		button{width: 130px;cursor:pointer;text-decoration:none;text-align: center;transition-duration: 0.4s; padding:10px;}
+		button.hover{box-shadow:0 10px 9px 0 rgba(0,0,0,0.2),0 17px 50px 0 rgba(0,0,0,0.10);}
+
+		.card{
+			width:80%;
+			margin:auto;
+			height:65%;
+			margin-top:20px;
+			border:1px solid;
+			background-image: url(""); /*masukkan gambar kamu dalam ""*/
+			background-size: 100% 100%;
+			padding:20px;
+		}
+		.content{
+			/*border: 2px dashed;*/
+			padding:10px;
+			width:50%;
+			margin:auto;
+			word-wrap: break-word;
+		}
+		.top{
+			text-align: center;
+			background-color: #EFE9D9;
+		}
+		#previewhost{margin-top:30px;font-size:0.5em;}
+		hr{margin:auto;margin-top:5px;margin-bottom:10px;width:80%;}
+		#invited{font-size:0.5em;border-top:4px ridge;border-bottom:4px ridge;padding:5px;}
+		#previewevent{margin-top:10px;font-size:30px;width:80%;}
+		#previewplace{margin-top: 10px;margin-bottom:10px;width:70%;font-size:0.5em;}
+		#previewdate,#previewtime{font-size:0.5em;}
+
+		@media screen and (max-width:600px){
+			body{margin:0;padding:0;width:100%;height:100%;}
+			.wrapper{display:block;height:100%;}
+			.menu{padding:10px;}
+			aside,section{margin-bottom:0;padding-bottom:10px;}
+			button{display:block;margin:auto;}
+			#previewplace,#previewdate,#previewtime,#previewhost{font-size:0.5em;}
+		}
+	</style>
+</head>
+<body>
+<!-- header -->
+	<!-- top -->
+	<header>
+	<p>E-INVITATION CARD</p>
+	<nav>
+		<a href="index.html" class="navmenu" style="text-decoration:none">Home</a>
+		<a href="custompage.html" class="navmenu" style="text-decoration:none">Customize</a>
+		<a href="#gotocard" class="navmenu" style="text-decoration:none">Cards</a>
+	</nav>
+	</header>
+	<div id="top">Formal - Template 2</div>
+
+<!-- main body -->
+<div class="wrapper">
+
+	<!-- aside -->
+	<!-- Left -->
+	<aside class="menu" style="grid-area:one">
+	<div class="formenu">
+	<span>Enter your text below:</span><br>
+	<input type="text" id="host" placeholder="Enter host name"><br>
+	<input type="text" id="event" placeholder="Enter event name"><br>
+	<input type="text" id="place" placeholder="Enter place"><br>
+	<input type="text" id="date" placeholder="Enter date"><br>
+	<input type="time" id="time" placeholder="choose time"><br><br>
+	<button class="favbtn">add to favourite</button>&nbsp;&nbsp;&nbsp;&nbsp;
+	<button class="loadfav">load favourite</button>
+	</div>
+	</aside>
+
+	<!-- section -->
+	<!-- right / main area-->
+	<section class="preview" style="grid-area:two">
+		<div class="card">
+			<p class="content" id="previewhost">Host name</p>
+			<hr>
+			<span id="invited">You are invited to</span>
+			<p class="content" id="previewevent">Event name</p>
+			<p class="content" id="previewplace">Place</p>
+			<p class="content" id="previewdate">Date</p>
+			<p class="content" id="previewtime">Time</p>
+		</div>
+	</section>
+	<!-- <button>Send to friend</button> -->
+</div>
+<footer>
+		<h3 class="footer">© copyright 2021</h3>
+	</footer>
+
+<!-- code -->
+	<script type="text/javascript">
+		var input1 = document.getElementById("host");
+		var input2 = document.getElementById("event");
+		var input3 = document.getElementById("place");
+		var input4 = document.getElementById("date");
+		var input5 = document.getElementById("time");
+
+		var display1 = document.getElementById("previewhost");
+		var display2 = document.getElementById("previewevent");
+		var display3 = document.getElementById("previewplace");
+		var display4 = document.getElementById("previewdate");
+		var display5 = document.getElementById("previewtime");
+
+		var addfavbtn = document.querySelector('.favbtn');
+		var loadfavbtn	= document.querySelector('.loadfav');
+
+// input text will be display at the preview card
+		input1.addEventListener('input', letter1 =>{display1.textContent = letter1.target.value;})
+		input2.addEventListener('input', letter2 =>{display2.textContent = letter2.target.value;})
+		input3.addEventListener('input', letter3 =>{display3.textContent = letter3.target.value;})
+		input4.addEventListener('input', letter4 =>{display4.textContent = letter4.target.value;})
+		input5.addEventListener('input', letter5 =>{display5.textContent = letter5.target.value;})
+
+// save to local storage
+		var savetolocalstorage = save =>{
+			localStorage.setItem("hostName4",display1.textContent)
+			localStorage.setItem("eventName4",display2.textContent)
+			localStorage.setItem("place4",display3.textContent)
+			localStorage.setItem("date4",display4.textContent)
+			localStorage.setItem("time4",display5.textContent)
+		}
+// load from local storage
+		var loadlocalstorage = load =>{
+			input1.value=localStorage.getItem("hostName4")
+			input2.value=localStorage.getItem("eventName4")
+			input3.value=localStorage.getItem("place4")
+			input4.value=localStorage.getItem("date4")
+			input5.value=localStorage.getItem("time4")
+
+			previewhost.innerHTML=localStorage.getItem("hostName4")
+			previewevent.innerHTML=localStorage.getItem("eventName4")
+			previewplace.innerHTML=localStorage.getItem("place4")
+			previewdate.innerHTML=localStorage.getItem("date4")
+			previewtime.innerHTML=localStorage.getItem("time4")
+		}
+// button for save and load
+		addfavbtn.addEventListener('click',savetolocalstorage)
+		loadfavbtn.addEventListener('click',loadlocalstorage)
+	</script>
+</body>
+</html>
